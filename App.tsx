@@ -5,6 +5,7 @@ import Home from './src/screens/Home/Home';
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import IntroPage from './src/screens/Intro';
 import LandingScreen from './src/screens/Home/Home';
+import SingleCharityScreen from './src/screens/Home/SingleCharityScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +23,13 @@ export default function App() {
         <Stack.Screen
           name="Home"
           component={Home}
+          options={{
+            headerShown: false,
+          }}       
+        />
+        <Stack.Screen
+          name="SingleCharity"
+          component={SingleCharityScreen}
           options={{
             headerShown: false,
           }}       
