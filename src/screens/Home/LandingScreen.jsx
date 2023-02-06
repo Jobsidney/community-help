@@ -14,11 +14,9 @@ type Props = {}
 const LandingScreen = (props: Props) => {
     const navigation=useNavigation()
     const [search,setSearch ]=useState('')
-
     const updateSearch=(search)=>{
         setSearch(search)
     }
-
     const data={
         title:'Help Them Smile Again',
         description:'Refugees International is committed to saving the lives and protecting the rights, dignity, and security of refugees and displaced people worldwide. Since 1979, Refugees International has used its independent advocacy to improve the rights of all people seeking safety.',
@@ -31,8 +29,6 @@ const LandingScreen = (props: Props) => {
             verified:true
         },
         
-
-
     }
     
   return (
@@ -47,6 +43,8 @@ const LandingScreen = (props: Props) => {
         </TouchableWithoutFeedback>
 
       </View>
+
+      <ScrollView  showsVerticalScrollIndicator={false} className='space-y-4'>
       <View className=' bg-[#da5221] rounded-lg h-[100px] px-2 items-center space-x-3  flex-row'>
             <View className='bg-white rounded-md'>
                 <Ionicons  name="heart-sharp" size={44} color="#da5221" />
@@ -61,7 +59,7 @@ const LandingScreen = (props: Props) => {
         <Ionicons name="search" size={20} color="gray" />
         <TextInput className='flex-1 h-[40px]' placeholder='search here'/>
       </View> */}
-      <View className='flex-col'>
+      <View className='flex-col  sticky top-0 z-44'>
         <Text className='font-bold text-lg tracking-normal mb-3'>Categories</Text>
         <ScrollView horizontal showsHorizontalScrollIndicator={false} className='flex-row '>
             <CategoryIcon icon={<Feather name="pen-tool" size={16} color="#da5221"  />}word="Humanity" />
@@ -75,10 +73,11 @@ const LandingScreen = (props: Props) => {
 
         </ScrollView>
       </View>
-      <ScrollView className='bg-white'>
-        <CategoryCard />
-        <CategoryCard/>
-      </ScrollView>
+      <View className='bg-white'>
+        <CategoryCard title={data.title} description={data.description} imageUrl="https://plan-uk.org/sites/default/files/Images/Syrian%20refugee%20child%20waves%20during%20school.png" period={data.period} days_left={data.days_left} Current_Donation={data.Current_Donation} target_Donation={data.target_Donation} campaign_leader={data.campaign_leader}/>
+        <CategoryCard title={data.title} description={data.description} imageUrl="http://d3e1m60ptf1oym.cloudfront.net/181b54ab-1799-4b3f-a10b-117375f299a2/Brett-Cole-India-07489_xgaplus.jpg" period={data.period} days_left={data.days_left} Current_Donation={data.Current_Donation} target_Donation={data.target_Donation} campaign_leader={data.campaign_leader}/>
+        <CategoryCard title={data.title} description={data.description} imageUrl="https://media.istockphoto.com/id/896282868/photo/indian-rural-school-kids-learning-from-books-in-the-classroom.jpg?s=612x612&w=0&k=20&c=ML7fNAtUK1wuJLqGajGms8zvTKCZZq41Hh8Q_o5ZaEU=" period={data.period} days_left={data.days_left} Current_Donation={data.Current_Donation} target_Donation={data.target_Donation} campaign_leader={data.campaign_leader}/>
+      </View></ScrollView>
 
     </SafeAreaView>
   )
