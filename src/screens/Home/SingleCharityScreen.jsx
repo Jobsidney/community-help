@@ -14,8 +14,8 @@ function SingleCharityScreen() {
     }}=useRoute()
     const navigation=useNavigation()
   return (
-    <View className='bg-[#FAFAFA]    space-y-4 flex-1'>
-        <SafeAreaView className='px-4 space-y-2'>
+    <View className='bg-[#FAFAFA]    flex-1'>
+        <SafeAreaView className='px-4 space-y-2 flex-1'>
             <View className='h-[50px] flex-row items-center justify-between'>
                 <TouchableOpacity onPress={()=>navigation.goBack()}>
                     <MaterialIcons name="keyboard-arrow-left" size={32} color="black" />
@@ -28,6 +28,8 @@ function SingleCharityScreen() {
                 </TouchableOpacity>
 
             </View>
+            <ScrollView showsVerticalScrollIndicator={false} >
+            <View className=' space-y-4 flex-1 mb-4'>
             <Image className='w-[100%] h-[250px] rounded-md ' source={{uri:imageUrl}}/>
             
             {/* <Text className='font-bold text-[#da5221] text-[16px] mb-8'>9 Days Left</Text> */}
@@ -56,18 +58,29 @@ function SingleCharityScreen() {
                 </View>
             </View>
 
-
-            <View className=' bg-[#E7E7E7] rounded-lg h-[80px] px-2 items-center space-x-3  flex-row'>
-             
-                <Image className='w-[50px] h-[50px] rounded-full ' source={{uri:'https://iadsb.tmgrup.com.tr/affd76/0/0/0/0/2048/1365?u=https://idsb.tmgrup.com.tr/2017/10/04/number-of-syrian-refugees-in-turkey-reaches-3208131-1507123492065.jpg'}}/>
-               
-                <View>
-                    <Text className='text-black  font-semibold text-md '>{campaign_leader.name}</Text>
-                    <Text className='text-[#da5221] font-semibold text-sm '>{campaign_leader.verified? "verified user":""}</Text><MaterialIcons name="verified-user" size={20} color="#da5221" />
-                </View>
+            <View>
+                <Text className='text-[#707070] tracking-wide leading-5'>{description}</Text>
             </View>
 
-            
+            <View className='space-y-3 mb-4'>
+                <Text className='font-bold tracking-widest'>Campaign By</Text>
+            <View className=' bg-[#E7E7E7] rounded-lg h-[80px] px-2 items-center space-x-3  flex-row'>
+                <Image className='w-[50px] h-[50px] rounded-full ' source={{uri:'https://iadsb.tmgrup.com.tr/affd76/0/0/0/0/2048/1365?u=https://idsb.tmgrup.com.tr/2017/10/04/number-of-syrian-refugees-in-turkey-reaches-3208131-1507123492065.jpg'}}/>
+                <View>
+                    <Text className='text-black  font-semibold text-md '>{campaign_leader.name}</Text>
+                    <View className='flex-row justify-between'>
+                    <Text className='text-[#da5221] font-semibold text-sm '>{campaign_leader.verified? "verified user":""}</Text><MaterialIcons name="verified-user" size={20} color="#da5221" /></View>
+                </View>
+            </View></View>
+            <TouchableOpacity onPress={()=>{navigation.navigate('PaymentOption')}} className='bg-black items-center py-3  rounded-md'>
+                <Text className='text-[16px] text-white tracking-widest'>Donate Now</Text>
+            </TouchableOpacity>
+
+
+            {/* text area */}
+
+        </View>
+            </ScrollView>
         </SafeAreaView>
        
         
