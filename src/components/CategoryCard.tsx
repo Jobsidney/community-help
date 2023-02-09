@@ -20,7 +20,7 @@ const CategoryCard = ({
         <Text className='text-[#c5c5c5]'>Donation raised</Text>
         <View className='flex-row justify-between space-y-2 items-center'>
             <Text className='font-bold text-[#da5221]  text-[18px]'>$52,700</Text>
-            <Text className='font-bold text-[#c5c5c5] text-[18px]'>9 Days Left</Text>
+            <Text className='font-bold text-[#c5c5c5] text-[14px] '>9 Days Left</Text>
         </View>
         
       </View>
