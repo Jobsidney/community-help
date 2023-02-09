@@ -6,6 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 type Props = {}
 
 const SignUp = (props: Props) => {
+    //jigigk
     const navigation=useNavigation()
   return (
     <View className='bg-white flex-1 '>
