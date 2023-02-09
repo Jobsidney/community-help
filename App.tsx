@@ -6,6 +6,10 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import IntroPage from './src/screens/Intro';
 import LandingScreen from './src/screens/Home/Home';
 import SingleCharityScreen from './src/screens/Home/SingleCharityScreen';
+import PaymentOption from './src/screens/Payments/PaymentOption';
+import MpesaPaymentPage from './src/screens/Payments/MpesaPaymentPage';
+import SignUp from './src/screens/Authentication/SignUp';
+import Welcome from './src/screens/Authentication/Welcome';
 
 const Stack = createNativeStackNavigator();
 
@@ -30,6 +34,34 @@ export default function App() {
         <Stack.Screen
           name="SingleCharity"
           component={SingleCharityScreen}
+          options={{
+            headerShown: false,
+          }}       
+        />
+         <Stack.Screen
+          name="PaymentOption"
+          component={PaymentOption}
+          options={{
+            headerShown: false,
+          }}       
+        />
+        <Stack.Screen
+          name="MpesaPaymentOption"
+          component={MpesaPaymentPage}
+          options={{
+            headerShown: false,
+          }}       
+        />
+        <Stack.Screen
+          name="Welcome"
+          component={Welcome}
+          options={{
+            headerShown: false,
+          }}       
+        />
+        <Stack.Screen
+          name="SignUp"
+          component={SignUp}
           options={{
             headerShown: false,
           }}       
