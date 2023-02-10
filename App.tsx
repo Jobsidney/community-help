@@ -8,8 +8,10 @@ import LandingScreen from './src/screens/Home/Home';
 import SingleCharityScreen from './src/screens/Home/SingleCharityScreen';
 import PaymentOption from './src/screens/Payments/PaymentOption';
 import MpesaPaymentPage from './src/screens/Payments/MpesaPaymentPage';
-import SignUp from './src/screens/Authentication/SignUp';
+import SignUp from './src/screens/Authentication/SignIn';
 import Welcome from './src/screens/Authentication/Welcome';
+import SignIn from './src/screens/Authentication/SignIn';
+import Register from './src/screens/Authentication/Register';
 
 const Stack = createNativeStackNavigator();
 
@@ -60,8 +62,15 @@ export default function App() {
           }}       
         />
         <Stack.Screen
-          name="SignUp"
-          component={SignUp}
+          name="SignIn"
+          component={SignIn}
+          options={{
+            headerShown: false,
+          }}       
+        />
+        <Stack.Screen
+          name="Register"
+          component={Register}
           options={{
             headerShown: false,
           }}       
