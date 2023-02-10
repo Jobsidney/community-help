@@ -48,7 +48,7 @@ const carouselItems=[
       </View>
 
       <View className='flex-col w-full space-y-2'>
-      <TouchableOpacity onPress={()=>navigation.navigate('SignUp')}  className='  bg-[#EA470A]  w-full py-3 items-center rounded-3xl'>
+      <TouchableOpacity onPress={()=>navigation.navigate('SignIn')}  className='  bg-[#EA470A]  w-full py-3 items-center rounded-3xl'>
           <Text className='text-[16px] tracking-wider text-white'>Sign Up</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={()=>navigation.navigate('Home')}  className=' border-[#EA470A] border-[2px] w-full py-2 items-center rounded-3xl'>
