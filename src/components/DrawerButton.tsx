@@ -9,7 +9,7 @@ const DrawerButton = ({navigation}) => {
     
     return(
         <TouchableOpacity onPress={()=>navigation.openDrawer()}>
-            <Ionicons name="reorder-three" size={34} color="black" />
+            <Ionicons name="reorder-three" size={34} color="white" />
         </TouchableOpacity>
     )
 }
