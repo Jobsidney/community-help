@@ -5,6 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { MaterialIcons } from '@expo/vector-icons'; 
 import { Ionicons } from '@expo/vector-icons'; 
 import * as Progress from 'react-native-progress';
+
 type Props = {}
 
 function SingleCharityScreen() {
@@ -14,9 +15,22 @@ function SingleCharityScreen() {
     }}=useRoute()
     const navigation=useNavigation()
   return (
-    <View className='bg-[#FAFAFA]    flex-1'>
-        <SafeAreaView className='px-4 space-y-2 flex-1'>
-            <View className='h-[50px] flex-row items-center justify-between'>
+    <View className='bg-[#FAFAFA]    flex-1'><ScrollView showsVerticalScrollIndicator={false} >
+        <View className='relative'>
+            <Image className='w-[100%] h-[300px] opacity-80 ' source={{uri:imageUrl}}/>
+                <TouchableOpacity className='absolute top-10 left-4 bg-black/50 rounded-full h-[35px] w-[35px]' onPress={()=>navigation.goBack()}>
+                    <MaterialIcons name="keyboard-arrow-left" size={32} color="white" />
+                </TouchableOpacity>
+                <TouchableOpacity className='absolute top-10 right-4 items-center justify-center bg-black/50 rounded-full h-[35px] w-[35px]' onPress={()=>{}}>
+            
+                    <Ionicons name="share-social" size={24} color="white" />
+                </TouchableOpacity>
+
+                <Text className='absolute bottom-2 left-2 text-white font-bold text-[20px]  tracking-wider'>{title}</Text>
+        </View>
+        
+        <View className='px-4 space-y-2 flex-1'>
+            {/* <View className='h-[50px] flex-row items-center justify-between'>
                 <TouchableOpacity onPress={()=>navigation.goBack()}>
                     <MaterialIcons name="keyboard-arrow-left" size={32} color="black" />
                 </TouchableOpacity>
@@ -27,18 +41,16 @@ function SingleCharityScreen() {
                 <Ionicons  name="heart-outline" size={32} color="black" />
                 </TouchableOpacity>
 
-            </View>
-            <ScrollView showsVerticalScrollIndicator={false} >
-            <View className=' space-y-4 flex-1 mb-4'>
-            <Image className='w-[100%] h-[250px] rounded-md ' source={{uri:imageUrl}}/>
+            </View> */}
+            
+                
+            <View className='pt-2 space-y-4 flex-1 mb-4'>
+            
             
             {/* <Text className='font-bold text-[#da5221] text-[16px] mb-8'>9 Days Left</Text> */}
 
-
-           
-
             <View className='bg-[white] space-y-3'>
-            <Text className='font-bold text-[18px]  tracking-wider'>{title}</Text>
+            
             <Progress.Bar progress={0.8} width={300} color={'#da5221'} unfilledColor={'#EBEBEB'} borderColor="transparent" />
                 <View className='flex-row justify-between'>
                     
@@ -69,7 +81,7 @@ function SingleCharityScreen() {
                 <View>
                     <Text className='text-black  font-semibold text-md '>{campaign_leader.name}</Text>
                     <View className='flex-row justify-between'>
-                    <Text className='text-[#da5221] font-semibold text-sm '>{campaign_leader.verified? "verified user":""}</Text><MaterialIcons name="verified-user" size={20} color="#da5221" /></View>
+                    <Text className='text-[#da5221] font-semibold text-sm '>{campaign_leader.verified? "verified user":""}</Text><MaterialIcons name="verified-user" size={20} color="green" /></View>
                 </View>
             </View></View>
             <TouchableOpacity onPress={()=>{navigation.navigate('PaymentOption')}} className='bg-black items-center py-3  rounded-md'>
@@ -80,10 +92,10 @@ function SingleCharityScreen() {
             {/* text area */}
 
         </View>
-            </ScrollView>
-        </SafeAreaView>
+            
+        </View>
        
-        
+        </ScrollView>
     </View>
   )
 }
