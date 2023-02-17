@@ -26,10 +26,10 @@ const FeaturedRow = ({title,description,featuredCategory,id}) => {
   return (
     <View>
       <View className='mt-4 flex-row items-center justify-between mb-1 '>
-        <Text className='font-bold text-[20px] tracking-wider'>{title}</Text>
+        <Text className='font-bold text-[16px] tracking-wider'>{title}</Text>
         <View className='flex-row items-center '>
-            <Text className='  text-[#da5221] text-md font-bold tracking-widest '>{description}</Text>
-            {/* <Ionicons name="arrow-forward-sharp" size={18} color="#3979DB" /> */}
+            {/* <Text className='  text-[#da5221] text-md font-bold tracking-widest '>{description}</Text> */}
+            <Ionicons name="arrow-forward-sharp" size={20} color="black" />
         </View>
         
       </View>
@@ -37,7 +37,7 @@ const FeaturedRow = ({title,description,featuredCategory,id}) => {
       <ScrollView
       horizontal
       contentContainerStyle={{
-        paddingHorizontal:15,
+        // paddingHorizontal:15,
         paddingVertical:15
         
       }}
