@@ -33,7 +33,7 @@ const LandingScreen = (props: Props) => {
     }
     
   return (
-    <View className='flex-1 bg-white'>
+    <View className='flex-1 bg-[#FAFAFA]'>
       <View className='h-[200px] bg-[#da5221] pt-8 px-2 rounded-b-2xl'>
       <View className='flex-row w-full items-center justify-between'>
         <DrawerButton navigation={navigation}/>
