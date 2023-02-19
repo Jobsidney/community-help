@@ -30,18 +30,7 @@ function SingleCharityScreen() {
         </View>
         
         <View className='px-4 space-y-2 flex-1'>
-            {/* <View className='h-[50px] flex-row items-center justify-between'>
-                <TouchableOpacity onPress={()=>navigation.goBack()}>
-                    <MaterialIcons name="keyboard-arrow-left" size={32} color="black" />
-                </TouchableOpacity>
-                <Text className='text-[16px] font-semibold'>
-                    Details
-                </Text>
-                <TouchableOpacity onPress={()=>navigation.goBack()}>
-                <Ionicons  name="heart-outline" size={32} color="black" />
-                </TouchableOpacity>
 
-            </View> */}
             
                 
             <View className='pt-2 space-y-4 flex-1 mb-4'>
@@ -118,3 +107,15 @@ export default SingleCharityScreen
     <Text className='font-bold text-[16px] text-[#da5221]'>82%</Text>
 </View>
 </View> */}
+            {/* <View className='h-[50px] flex-row items-center justify-between'>
+                <TouchableOpacity onPress={()=>navigation.goBack()}>
+                    <MaterialIcons name="keyboard-arrow-left" size={32} color="black" />
+                </TouchableOpacity>
+                <Text className='text-[16px] font-semibold'>
+                    Details
+                </Text>
+                <TouchableOpacity onPress={()=>navigation.goBack()}>
+                <Ionicons  name="heart-outline" size={32} color="black" />
+                </TouchableOpacity>
+
+            </View> */}
