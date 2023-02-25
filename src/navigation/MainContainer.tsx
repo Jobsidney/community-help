@@ -54,28 +54,12 @@ const MainContainer = (props: Props) => {
                 // right:10,
                 // elevation:0,
                 // backgroundColor:'white',
-                
-                // padding:5,
-                // borderRadius:30 ,      
-                // bottom:10,
-                // left:10,
-                // right:10,
-                // elevation:0,
-                // backgroundColor:'white',
 
             
             }
             
         })
     }
-    // tabBarOptions={{
-    //     activeTintColor: 'tomato',
-    //     inactiveTintColor: 'gray'
-    // }}
-    
-        
-
-
         >
             <Tab.Screen name={homeScreen} component={Home} options={{headerShown: false,}}/>
             <Tab.Screen name={donationScreen} component={SignIn} options={{headerShown: false,}}/>
