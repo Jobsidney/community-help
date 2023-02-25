@@ -6,11 +6,14 @@ import Home from '../screens/Home/Home';
 import SignIn from '../screens/Authentication/SignIn';
 import Register from '../screens/Authentication/Register';
 import { Ionicons } from '@expo/vector-icons'; 
+import SingleCharityScreen from '../screens/Home/SingleCharityScreen';
+import PaymentOption from '../screens/Payments/PaymentOption';
 type Props = {}
 
 const homeScreen='Home';
 const accountScreen='Account';
 const donationScreen='Donations';
+const bookmark='Fav'
 
 const Tab=createBottomTabNavigator();
 
@@ -32,6 +35,8 @@ const MainContainer = (props: Props) => {
                     iconName=focused? 'person':'person-outline'
                 }else if(rn===donationScreen){
                     iconName=focused? 'heart-circle':'heart-circle-outline'
+                }else if(rn===bookmark){
+                    iconName=focused? 'bookmark':'bookmark-outline'
                 }
 
                 return <Ionicons name={iconName} size={24} color={focused?'tomato':'gray'}/>
@@ -41,13 +46,23 @@ const MainContainer = (props: Props) => {
             tabBarStyle:{
                 position:'absolute',
                 shadowColor:'black',
-             
+
+                // padding:5,
+                // borderRadius:30 ,      
                 // bottom:10,
                 // left:10,
                 // right:10,
                 // elevation:0,
                 // backgroundColor:'white',
-                // borderRadius: 20,
+                
+                // padding:5,
+                // borderRadius:30 ,      
+                // bottom:10,
+                // left:10,
+                // right:10,
+                // elevation:0,
+                // backgroundColor:'white',
+
             
             }
             
@@ -64,7 +79,9 @@ const MainContainer = (props: Props) => {
         >
             <Tab.Screen name={homeScreen} component={Home} options={{headerShown: false,}}/>
             <Tab.Screen name={donationScreen} component={SignIn} options={{headerShown: false,}}/>
+            <Tab.Screen name={bookmark} component={PaymentOption} options={{headerShown: false,}}/>
             <Tab.Screen name={accountScreen} component={Register} options={{headerShown: false,}}/>
+            
 
         </Tab.Navigator>
     </NavigationContainer>
