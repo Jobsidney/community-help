@@ -19,19 +19,13 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   const loggedIn=true;
   return (
-    loggedIn? <MainContainer/>:
+    loggedIn?
     <NavigationContainer>
        <Stack.Navigator>
+        
         <Stack.Screen
-          name="Intro"
-          component={IntroPage}
-          options={{
-            headerShown: false,
-          }}       
-        />
-        <Stack.Screen
-          name="Home"
-          component={Home}
+          name="MainContainer"
+          component={MainContainer}
           options={{
             headerShown: false,
           }}       
@@ -43,45 +37,11 @@ export default function App() {
             headerShown: false,
           }}       
         />
-         <Stack.Screen
-          name="PaymentOption"
-          component={PaymentOption}
-          options={{
-            headerShown: false,
-          }}       
-        />
-        <Stack.Screen
-          name="MpesaPaymentOption"
-          component={MpesaPaymentPage}
-          options={{
-            headerShown: false,
-          }}       
-        />
-        <Stack.Screen
-          name="Welcome"
-          component={Welcome}
-          options={{
-            headerShown: false,
-          }}       
-        />
-        <Stack.Screen
-          name="SignIn"
-          component={SignIn}
-          options={{
-            headerShown: false,
-          }}       
-        />
-        <Stack.Screen
-          name="Register"
-          component={Register}
-          options={{
-            headerShown: false,
-          }}       
-        />
+        
         </Stack.Navigator>
        
         <StatusBar />
-      </NavigationContainer>
+      </NavigationContainer>:''
   
   );
 }
