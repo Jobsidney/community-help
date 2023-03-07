@@ -8,6 +8,7 @@ import Register from '../screens/Authentication/Register';
 import { Ionicons } from '@expo/vector-icons'; 
 import SingleCharityScreen from '../screens/Home/SingleCharityScreen';
 import PaymentOption from '../screens/Payments/PaymentOption';
+import LandingScreen from '../screens/Home/LandingScreen';
 type Props = {}
 
 const homeScreen='Home';
@@ -18,13 +19,10 @@ const bookmark='Fav'
 const Tab=createBottomTabNavigator();
 
 
-const MainContainer = (props: Props) => {
+const MainContainer = () => {
   return (
-    <NavigationContainer>
-        <Tab.Navigator
-              
+        <Tab.Navigator   
         initialRouteName={homeScreen}
-        
         screenOptions={({route})=>({
             tabBarIcon:({focused,color,size})=>{
                 let iconName;
@@ -45,30 +43,20 @@ const MainContainer = (props: Props) => {
             tabBarInactiveTintColor:'gray',
             tabBarStyle:{
                 position:'absolute',
-                shadowColor:'black',
-
-                // padding:5,
-                // borderRadius:30 ,      
-                // bottom:10,
-                // left:10,
-                // right:10,
-                // elevation:0,
-                // backgroundColor:'white',
-
-            
+                shadowColor:'black',            
             }
             
         })
     }
         >
-            <Tab.Screen name={homeScreen} component={Home} options={{headerShown: false,}}/>
+            <Tab.Screen name={homeScreen} component={LandingScreen} options={{headerShown: false,}}/>
             <Tab.Screen name={donationScreen} component={SignIn} options={{headerShown: false,}}/>
             <Tab.Screen name={bookmark} component={PaymentOption} options={{headerShown: false,}}/>
             <Tab.Screen name={accountScreen} component={Register} options={{headerShown: false,}}/>
             
 
         </Tab.Navigator>
-    </NavigationContainer>
+
   )
 }
 
