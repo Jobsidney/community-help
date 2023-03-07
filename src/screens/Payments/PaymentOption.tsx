@@ -30,6 +30,7 @@ const PaymentOption = (props: Props) => {
                 <Payment image={'https://o.remove.bg/downloads/a16a10c1-b3a0-4012-a1fd-23fe9fcce19a/MClogo-c823e495c5cf455c89ddfb0e17fc7978-removebg-preview.png'}/>
 
                 <Payment image={'https://o.remove.bg/downloads/d9e76dcb-3041-43f3-94d8-5528bd6544b9/1200px-M-PESA_LOGO-01.svg-removebg-preview.png'}/>
+                <Payment image={'https://o.remove.bg/downloads/d9e76dcb-3041-43f3-94d8-5528bd6544b9/1200px-M-PESA_LOGO-01.svg-removebg-preview.png'}/>
 
             </View>
             </SafeAreaView>
