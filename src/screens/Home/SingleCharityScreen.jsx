@@ -1,10 +1,11 @@
 import React from 'react'
-import { View, Text,Image,TouchableOpacity,TouchableWithoutFeedback,TextInput,ScrollView } from 'react-native'
+import { View,StyleSheet, Text,Image,TouchableOpacity,TouchableWithoutFeedback,TextInput,ScrollView, Dimensions } from 'react-native'
 import { useNavigation, useRoute } from '@react-navigation/native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { MaterialIcons } from '@expo/vector-icons'; 
 import { Ionicons } from '@expo/vector-icons'; 
 import * as Progress from 'react-native-progress';
+import MapView, { Callout, Marker } from 'react-native-maps';
 
 type Props = {}
 
@@ -62,6 +63,25 @@ function SingleCharityScreen() {
             <View>
                 <Text className='text-[#707070] tracking-wide leading-5'>{description}</Text>
             </View>
+            <View  className='flex-col items-center w-screen h-[200px] pr-10 '>
+                <MapView className='w-full h-[200px] rounded-2xl' style={styles.map}
+                initialRegion={{
+                    latitude: 37.78825,
+                    longitude: -122.4324,
+                    latitudeDelta: 0.0922,
+                    longitudeDelta: 0.0421,
+                  }} >
+                    <Marker 
+                    coordinate={{latitude: 37.78825,longitude:-122.4324}}
+                    title={'china'}
+                    pinColor="red"
+                    >
+                        <Callout>
+                            <Text>We are here</Text>
+                        </Callout>
+                    </Marker>
+                  </MapView>
+            </View>
 
             <View className='space-y-3 mb-4'>
                 <Text className='font-bold tracking-widest'>Campaign By</Text>
@@ -90,6 +110,13 @@ function SingleCharityScreen() {
 }
 
 export default SingleCharityScreen
+
+const styles = StyleSheet.create({
+
+    map: {
+      borderRadius:20
+    },
+  });
 
 {/* <View className='bg-[white] p-3  shadow-sm ' style={{shadowColor:'#c5c5c5'}}>
 <View className='flex-row justify-between'>
