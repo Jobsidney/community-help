@@ -13,6 +13,8 @@ import Welcome from './src/screens/Authentication/Welcome';
 import SignIn from './src/screens/Authentication/SignIn';
 import Register from './src/screens/Authentication/Register';
 import MainContainer from './src/navigation/MainContainer';
+import Payment from './src/components/Payment';
+import SingleCategoryScreen from './src/screens/Home/Categories/SingleCategoryScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -33,6 +35,20 @@ export default function App() {
         <Stack.Screen
           name="SingleCharity"
           component={SingleCharityScreen}
+          options={{
+            headerShown: false,
+          }}       
+        />
+        <Stack.Screen
+          name="PaymentOption"
+          component={PaymentOption}
+          options={{
+            headerShown: false,
+          }}       
+        />
+       <Stack.Screen
+          name="SingleCategory"
+          component={SingleCategoryScreen}
           options={{
             headerShown: false,
           }}       
