@@ -2,14 +2,14 @@ import { View, Text,Image, Button,TouchableOpacity } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import React from 'react'
 import 'react-native-gesture-handler';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+
 import { NavigationContainer } from '@react-navigation/native';
 import IntroPage from '../Intro';
 import LandingScreen from './LandingScreen';
 type Props = {
     name:string;
 }
-const Drawer = createDrawerNavigator();
+
 const Home = (props: Props) => {
     const MyTheme = {
         colors: {
@@ -23,22 +23,23 @@ const Home = (props: Props) => {
       };
     return(
 
-        <Drawer.Navigator
-            screenOptions={{
-                drawerStyle: {
-                backgroundColor: 'white',
-                width: 240,
-                },
-            }}
-        >
-            <Drawer.Screen
-                name="LandingScreen"
-                component={LandingScreen}
-                options={{
-                    headerShown: false,
-                }}       
-            />
-        </Drawer.Navigator>
+        // <Drawer.Navigator
+        //     screenOptions={{
+        //         drawerStyle: {
+        //         backgroundColor: 'white',
+        //         width: 240,
+        //         },
+        //     }}
+        // >
+        //     <Drawer.Screen
+        //         name="LandingScreen"
+        //         component={LandingScreen}
+        //         options={{
+        //             headerShown: false,
+        //         }}       
+        //     />
+        // </Drawer.Navigator>
+        <View></View>
         
     )
 }
