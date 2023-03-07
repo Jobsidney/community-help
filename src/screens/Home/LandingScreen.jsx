@@ -62,7 +62,7 @@ const LandingScreen = (props: Props) => {
     <View className='  flex-1 px-4   space-y-4 '>
       
 
-      <ScrollView  showsVerticalScrollIndicator={false} className='space-y-2'>
+      <ScrollView  showsVerticalScrollIndicator={false} className='space-y-2 mb-16'>
       <View className='flex-row items-center rounded-2xl border border-gray-300 basis-[100%]'> 
         <View className=' basis-[70%] bg-[#1F2D36] rounded-2xl flex-row items-center space-x-3   -mr-2 h-[90px] pl-6'>
           <View>
@@ -96,6 +96,7 @@ const LandingScreen = (props: Props) => {
       <View className=' space-y-2'>
         <FeaturedRow title={'Urgent Fundraising'} description={'View All'}/>
         <FeaturedRow title={'Favourite'} description={'View All'}/>
+        <FeaturedRow title={'Near You'} description={'View All'}/>
       </View></ScrollView>
 
     </View></SafeAreaView></View>
