@@ -9,6 +9,7 @@ import { Ionicons } from '@expo/vector-icons';
 import SingleCharityScreen from '../screens/Home/SingleCharityScreen';
 import PaymentOption from '../screens/Payments/PaymentOption';
 import LandingScreen from '../screens/Home/LandingScreen';
+import MainUserPage from './MainUserPage';
 type Props = {}
 
 const homeScreen='Home';
@@ -41,10 +42,22 @@ const MainContainer = () => {
             },
             tabBarActiveTintColor: 'tomato',
             tabBarInactiveTintColor:'gray',
+            tabBarShowLabel:false,
             tabBarStyle:{
                 position:'absolute',
-                shadowColor:'black',            
+                shadowColor:'black',
+                bottom:10,
+                left:10,
+                right:10,
+                
+                backgroundColor:'white',
+                borderRadius:30,
+                height:50
+
+                
+                        
             }
+            
             
         })
     }
@@ -52,7 +65,7 @@ const MainContainer = () => {
             <Tab.Screen name={homeScreen} component={LandingScreen} options={{headerShown: false,}}/>
             <Tab.Screen name={donationScreen} component={SignIn} options={{headerShown: false,}}/>
             <Tab.Screen name={bookmark} component={PaymentOption} options={{headerShown: false,}}/>
-            <Tab.Screen name={accountScreen} component={Register} options={{headerShown: false,}}/>
+            <Tab.Screen name={accountScreen} component={MainUserPage} options={{headerShown: false,}}/>
             
 
         </Tab.Navigator>
